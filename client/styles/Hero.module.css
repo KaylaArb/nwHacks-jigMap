@@ -1,0 +1,78 @@
+.hero {
+    width: 100%;
+    height: 100vh;
+    background-color: pink;
+    /*background-image: url("../public/heroImage.jpg");*/
+    /*background-size: cover;*/
+    /*background-position: center;*/
+    /*background-repeat: no-repeat;*/
+    position: relative;
+    top: -90px;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 90px);
+    margin-top: 90px;
+    justify-content: center;
+    align-content: center;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: auto;
+    font-size: 18px;
+    color: #525252;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: auto;
+    text-align: right;
+}
+
+
+.navSearchContainer {
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    position: relative;
+}
+
+.searchInput {
+    display: block;
+    width: 100%;
+    height: 75px;
+    padding: 10px 15px;
+    border: 1px solid #d8d8d8;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+}
+
+.formButton {
+    width: 75px;
+    height: 75px;
+    cursor: pointer;
+    background-image: url('/mag_glass.svg');
+    background-color: #ffffff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 75%;
+    border: 1px solid #d8d8d8;
+    border-right: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+

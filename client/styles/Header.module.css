@@ -3,7 +3,6 @@
     position: sticky;
     height: 90px;
     width: 100%;
-    background-color: white;
     padding: 0 75px;
     display: flex;
     justify-content: space-between;
@@ -17,6 +16,7 @@
 
 header.active {
     box-shadow: 0px 5px 15px 0 rgba(0, 0, 0, 0.15);
+    background-color: white;
 }
 
 .header__title {
