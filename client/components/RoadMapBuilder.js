@@ -1,8 +1,24 @@
 import React from "react";
 import Link from 'next/link'
+import {useState, useEffect} from 'react';
 import styles from '../styles/RoadMapBuilder.module.css';
 
 export default function Builder() {
+    const [add, setAdd] = useState('');
+
+    const addTop = () => (
+        <div className={styles.jigsawRow}>
+            <img src="/uploadArrow.svg" alt="logo" className={styles.uploadImage3}/>
+            <input id="thirdMap" placeholder="or click to start writing" className={styles.jigsawBoxTop2}/>
+        </div>
+    )
+
+    // const addBottom= () => (
+    //     <div className={styles.jigsawRow}>
+    //         <img src="/uploadArrow.svg" alt="logo" className={styles.uploadImage2}/>
+    //         <input id="thirdMap" placeholder="or click to start writing" className={styles.jigsawBoxBottom}/>
+    //     </div>
+    // ).then(() => setAdd(''));
 
     return (
         <div className={styles.builder}>
@@ -22,8 +38,10 @@ export default function Builder() {
                         </div>
                         <div className={styles.jigsawRow}>
                             <img src="/uploadArrow.svg" alt="logo" className={styles.uploadImage2}/>
-                            <input id="secondMap" placeholder="or click to start writing" className={styles.jigsawBoxBottom}/>
+                            <input id="secondMap"  placeholder="or click to start writing" className={styles.jigsawBoxBottom}/>
                         </div>
+                        {add === 'Top' ? addTop() : ''}
+                        <button type="button" onClick={() => setAdd('Top')} className={styles.addButton}> + </button>
                     </div>
                     <div className={styles.priceInfo}>
                         <p>Pricing</p>

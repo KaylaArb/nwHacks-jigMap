@@ -1,0 +1,43 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    display: flex;
+    padding-top: 50px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+}
+
+.roadmapInfo {
+    top: -20px;
+    width: 100%;
+    position: relative;
+    object-fit: cover;
+}
+
+.gridLayout {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+    grid-auto-rows: 20px;
+}
+
+.masonry {
+    height: auto;
+    column-count: 3;
+}
+.item {
+    height: auto;
+    width: auto;
+    display: inline-block;
+
+}
+
