@@ -49,6 +49,10 @@ header.active {
     transition-timing-function: ease-in-out;
 }
 
+.link.active {
+    color: #5D2D86;
+}
+
 .navLinks.active {
     color: black;
 }
