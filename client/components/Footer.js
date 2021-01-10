@@ -16,7 +16,7 @@ export default function Footer() {
                         <Link href="/timeline"><a className={styles.text}>Timeline</a></Link>
                     </div>
                     <div className={styles.logo_menu}>
-                        <h3 className={styles.subTitle}>Company</h3>
+                        <p className={styles.subTitle}>Company</p>
                         <Link href="/contact"><a className={styles.text}>Contact</a></Link>
                         <Link href="/about"><a className={styles.text}>About Us</a></Link>
                         <Link href="/" ><a className={styles.text}>Collaborate</a></Link>

@@ -6,7 +6,7 @@ export default function Trending() {
 
     return (
         <div className={styles.trending}>
-            <h2 className={styles.title}>Trending Roadmaps</h2>
+            <h2>Trending Roadmaps</h2>
             <div >
                 <p className={styles.paragraph}> Explore thousands of roadmaps for your courses, ideas or any
                     discipline.</p>

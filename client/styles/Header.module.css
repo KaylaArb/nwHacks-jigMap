@@ -44,7 +44,7 @@ header.active {
     padding: 10px 25px;
     text-decoration: none;
     font-size: 21px;
-    font-weight: 600;
+    font-weight: 500;
     transition: all 0.3s;
     transition-timing-function: ease-in-out;
 }
@@ -58,4 +58,23 @@ header.active {
     display: flex;
     border-radius: 5px;
     position: relative;
+}
+
+.loginButton {
+    display: inline-block;
+    background-color: white;
+    cursor: pointer;
+    color: #612D8E;
+    font-size: 21px;
+    font-weight: 600;
+    border-radius: 15px;
+    border: none;
+    padding: 10px 25px;
+    transition: all 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.loginButton.active {
+    background-color: #612D8E;
+    color: white;
 }

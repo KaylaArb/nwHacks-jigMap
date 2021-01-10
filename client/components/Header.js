@@ -1,7 +1,7 @@
 import React from "react";
 import Link from 'next/link'
 import styles from '../styles/Header.module.css'
-import { useState, useEffect } from 'react';
+import {useState, useEffect} from 'react';
 
 export default function Header() {
 
@@ -22,7 +22,7 @@ export default function Header() {
     return (
         <header className={`${styles.header} ${isScrolled ? styles.active : ''}`}>
             <div className={styles.header__title}>
-                <Link href="/"><img src="/jigmap_logo.svg" alt="logo" className={styles.logo} /></Link>
+                <Link href="/"><img src="/jigmap_logo.svg" alt="logo" className={styles.logo}/></Link>
             </div>
 
             <div className={`${styles.navLinks} ${isScrolled ? styles.active : ''}`}>
@@ -42,9 +42,9 @@ export default function Header() {
                     </a>
                 </Link>
                 <Link href="/login">
-                    <a className={styles.links}>
-                        Log In
-                    </a>
+                    <button className={`${styles.loginButton} ${isScrolled ? styles.active : ''}`}><a>
+                        LOG IN
+                    </a></button>
                 </Link>
             </div>
         </header>

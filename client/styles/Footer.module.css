@@ -62,6 +62,9 @@
 
 .subTitle {
     color: white;
+    margin: 15px 0 25px 0;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .logosBox {
