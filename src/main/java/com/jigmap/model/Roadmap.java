@@ -7,8 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="roadmap")
 public class Roadmap {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,7 +22,8 @@ public class Roadmap {
     private Date publicationDate;
     private int rank;
     private int classifiedPrediction;
-
+    @ManyToOne
+    private User user;
 
     public Roadmap() {
     }
@@ -88,6 +92,15 @@ public class Roadmap {
 
     public void setClassifiedPrediction(int classifiedPrediction) {
         this.classifiedPrediction = classifiedPrediction;
+    }
+
+
+    public User getUser() {
+        return this.user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
 
