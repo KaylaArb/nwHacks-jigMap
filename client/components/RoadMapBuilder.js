@@ -59,7 +59,7 @@ export default function Builder() {
             method: 'POST',
             mode: 'no-cors',
             headers: {
-                'Content-Type': 'application/json'},
+                'Content-Type': 'text/plain'},
             body: JSON.stringify({title:name, description: description,user_id:2})})
             .then(response => {
                 // window.location.replace("/roadmaps")
