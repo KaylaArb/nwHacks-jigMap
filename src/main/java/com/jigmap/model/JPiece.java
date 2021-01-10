@@ -1,11 +1,12 @@
 package com.jigmap.model;
 
 import java.sql.Date;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,10 +21,10 @@ public class JPiece {
     private Long id;
     private String text;
     private String type;
-    private Date createOn;
+    private Date createdOn;
     private int orderNumber;
 
-    @ManyToMany(cascade=CascadeType.ALL)
+    @ManyToMany(cascade=CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinTable(
         name = "jpieces_likes",
         joinColumns = @JoinColumn(
@@ -33,9 +34,9 @@ public class JPiece {
             name = "user_id"
         )
     )
-    private List<User> userlikes  = new ArrayList<User>();
+    private Set<User> userlikes  = new HashSet<User>();
 
-    @ManyToMany(cascade=CascadeType.ALL)
+    @ManyToMany(cascade=CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinTable(
         name = "jpieces_clicks",
         joinColumns = @JoinColumn(
@@ -45,16 +46,16 @@ public class JPiece {
             name = "user_id"
         )
     )
-    private List<User> userclicks  = new ArrayList<User>();
+    private Set<User> userclicks  = new HashSet<User>();
 
     public JPiece() {
     }
 
-    public JPiece(Long id, String text, String type, Date createOn, int orderNumber, List<User> userlikes, List<User> userclicks) {
+    public JPiece(Long id, String text, String type, Date createdOn, int orderNumber, Set<User> userlikes, Set<User> userclicks) {
         this.id = id;
         this.text = text;
         this.type = type;
-        this.createOn = createOn;
+        this.createdOn = createdOn;
         this.orderNumber = orderNumber;
         this.userlikes = userlikes;
         this.userclicks = userclicks;
@@ -84,12 +85,12 @@ public class JPiece {
         this.type = type;
     }
 
-    public Date getCreateOn() {
-        return this.createOn;
+    public Date getCreatedOn() {
+        return this.createdOn;
     }
 
-    public void setCreateOn(Date createOn) {
-        this.createOn = createOn;
+    public void setCreatedOn(Date createdOn) {
+        this.createdOn = createdOn;
     }
 
     public int getOrderNumber() {
@@ -100,19 +101,19 @@ public class JPiece {
         this.orderNumber = orderNumber;
     }
 
-    public List<User> getUserlikes() {
+    public Set<User> getUserlikes() {
         return this.userlikes;
     }
 
-    public void setUserlikes(List<User> userlikes) {
+    public void setUserlikes(Set<User> userlikes) {
         this.userlikes = userlikes;
     }
 
-    public List<User> getuserclicks() {
+    public Set<User> getuserclicks() {
         return this.userclicks;
     }
 
-    public void setuserclicks(List<User> userclicks) {
+    public void setuserclicks(Set<User> userclicks) {
         this.userclicks = userclicks;
     }
 
@@ -122,7 +123,7 @@ public class JPiece {
             " id='" + getId() + "'" +
             ", text='" + getText() + "'" +
             ", type='" + getType() + "'" +
-            ", createOn='" + getCreateOn() + "'" +
+            ", createOn='" + getCreatedOn() + "'" +
             ", orderNumber='" + getOrderNumber() + "'" +
             ", userlikes='" + getUserlikes() + "'" +
             ", userclicks='" + getuserclicks() + "'" +

@@ -47,7 +47,7 @@ public class RoadmapController {
 
     @RequestMapping(value = "/new", 
             method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Roadmap> createUser(@RequestBody Roadmap roadmap) {
+    public ResponseEntity<Roadmap> createRoadmap(@RequestBody Roadmap roadmap) {
         return new ResponseEntity<>(roadmapRepository.save(roadmap), HttpStatus.OK);
     }
 }

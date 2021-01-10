@@ -2,7 +2,9 @@ package com.jigmap.model;
 
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -37,21 +39,21 @@ public class User {
     // @JoinColumn(name="user_id", referencedColumnName = "id")
     private List<Roadmap> roadmaps  = new ArrayList<>();
 
-    @ManyToMany(mappedBy = "userlikes", cascade=CascadeType.ALL)
-    private List<Roadmap> likedRoadmaps = new ArrayList<Roadmap>();
-    @ManyToMany(mappedBy = "usersubscriptions", cascade=CascadeType.ALL)
-    private List<Roadmap> subscribedRoadmaps = new ArrayList<Roadmap>();
-    @ManyToMany(mappedBy = "userlikes", cascade=CascadeType.ALL)
-    private List<JPiece> likedJPieces = new ArrayList<JPiece>();
-    @ManyToMany(mappedBy = "userclicks", cascade=CascadeType.ALL)
-    private List<JPiece> clickedJPieces = new ArrayList<JPiece>();
+    @ManyToMany(mappedBy = "userlikes", cascade=CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<Roadmap> likedRoadmaps = new HashSet<Roadmap>();
+    @ManyToMany(mappedBy = "usersubscriptions", cascade=CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<Roadmap> subscribedRoadmaps = new HashSet<Roadmap>();
+    @ManyToMany(mappedBy = "userlikes", cascade=CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<JPiece> likedJPieces = new HashSet<JPiece>();
+    @ManyToMany(mappedBy = "userclicks", cascade=CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<JPiece> clickedJPieces = new HashSet<JPiece>();
 
     public User() {
     }
 
     
 
-    public User(Long id, String userName, Date dateOfBirth, String email, String password, String profile, List<Roadmap> roadmaps, List<Roadmap> likedRoadmaps, List<Roadmap> subscribedRoadmaps, List<JPiece> likedJPieces, List<JPiece> clickedJPieces) {
+    public User(Long id, String userName, Date dateOfBirth, String email, String password, String profile, List<Roadmap> roadmaps, Set<Roadmap> likedRoadmaps, Set<Roadmap> subscribedRoadmaps, Set<JPiece> likedJPieces, Set<JPiece> clickedJPieces) {
         this.id = id;
         this.userName = userName;
         this.dateOfBirth = dateOfBirth;
@@ -121,35 +123,35 @@ public class User {
         this.roadmaps = roadmaps;
     }
 
-    public List<Roadmap> getLikedRoadmaps() {
+    public Set<Roadmap> getLikedRoadmaps() {
         return this.likedRoadmaps;
     }
 
-    public void setLikedRoadmaps(List<Roadmap> likedRoadmaps) {
+    public void setLikedRoadmaps(Set<Roadmap> likedRoadmaps) {
         this.likedRoadmaps = likedRoadmaps;
     }
 
-    public List<Roadmap> getSubscribedRoadmaps() {
+    public Set<Roadmap> getSubscribedRoadmaps() {
         return this.subscribedRoadmaps;
     }
 
-    public void setSubscribedRoadmaps(List<Roadmap> subscribedRoadmaps) {
+    public void setSubscribedRoadmaps(Set<Roadmap> subscribedRoadmaps) {
         this.subscribedRoadmaps = subscribedRoadmaps;
     }
 
-    public List<JPiece> getLikedJPieces() {
+    public Set<JPiece> getLikedJPieces() {
         return this.likedJPieces;
     }
 
-    public void setLikedJPieces(List<JPiece> likedJPieces) {
+    public void setLikedJPieces(Set<JPiece> likedJPieces) {
         this.likedJPieces = likedJPieces;
     }
 
-    public List<JPiece> getClickedJPieces() {
+    public Set<JPiece> getClickedJPieces() {
         return this.clickedJPieces;
     }
 
-    public void setClickedJPieces(List<JPiece> clickedJPieces) {
+    public void setClickedJPieces(Set<JPiece> clickedJPieces) {
         this.clickedJPieces = clickedJPieces;
     }
 
