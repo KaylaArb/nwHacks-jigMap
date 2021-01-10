@@ -33,18 +33,20 @@ public class UserController {
         try {
             Optional<User> user = userRepository.findById(Long.parseLong(userID));
             if(!user.isPresent()) {
-                logger.error("User {}", user.get().toString());
+                logger.error("No user");
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }
-            logger.debug("User {}", user.get().toString());
+            logger.debug("User {}", user.get().getUserName());
             return new ResponseEntity<>(user.get(), HttpStatus.OK);
         } catch(Exception e) {
+            logger.error("Internal error {} ", e.getMessage());
+            e.printStackTrace();
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
         
     }
 
-    @RequestMapping(value = "/", 
+    @RequestMapping(value = "/new", 
             method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<User> createUser(@RequestBody User user) {
         return new ResponseEntity<>(userRepository.save(user), HttpStatus.OK);

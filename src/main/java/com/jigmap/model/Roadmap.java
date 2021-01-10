@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -22,13 +21,13 @@ public class Roadmap {
     private Date publicationDate;
     private int rank;
     private int classifiedPrediction;
-    @ManyToOne
-    private User user;
+    private int user_id;
 
     public Roadmap() {
     }
 
-    public Roadmap(Long id, String title, String description, int price, Date publicationDate, int rank, int classifiedPrediction) {
+
+    public Roadmap(Long id, String title, String description, int price, Date publicationDate, int rank, int classifiedPrediction, int user_id) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -36,7 +35,9 @@ public class Roadmap {
         this.publicationDate = publicationDate;
         this.rank = rank;
         this.classifiedPrediction = classifiedPrediction;
+        this.user_id = user_id;
     }
+
 
     public Long getId() {
         return this.id;
@@ -95,13 +96,14 @@ public class Roadmap {
     }
 
 
-    public User getUser() {
-        return this.user;
+    public int getUser_id() {
+        return this.user_id;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
     }
+
 
 
     @Override
@@ -120,6 +122,7 @@ public class Roadmap {
         return Objects.hash(id, title, description, price, publicationDate, rank, classifiedPrediction);
     }
 
+
     @Override
     public String toString() {
         return "{" +
@@ -130,7 +133,9 @@ public class Roadmap {
             ", publicationDate='" + getPublicationDate() + "'" +
             ", rank='" + getRank() + "'" +
             ", classifiedPrediction='" + getClassifiedPrediction() + "'" +
+            ", user_id='" + getUser_id() + "'" +
             "}";
     }
+    
 
 }

@@ -11,6 +11,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
@@ -31,8 +32,13 @@ public class User {
     private String password;
     private String profile;
 
-    @OneToMany(targetEntity=User.class, cascade=CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(targetEntity=Roadmap.class, fetch = FetchType.LAZY)
+    @JoinColumn(name= "user_id")
     private List<Roadmap> roadmaps  = new ArrayList<>();;
+
+    public User() {
+    }
+
 
 
     public User(Long user_id, String userName, Date dateOfBirth, String email, String password, String profile, List<Roadmap> roadmaps) {
@@ -102,21 +108,6 @@ public class User {
 
     public void setRoadmaps(List<Roadmap> roadmaps) {
         this.roadmaps = roadmaps;
-    }
-
-
-
-    @Override
-    public String toString() {
-        return "{" +
-            " user_id='" + getUser_id() + "'" +
-            ", userName='" + getUserName() + "'" +
-            ", dateOfBirth='" + getDateOfBirth() + "'" +
-            ", email='" + getEmail() + "'" +
-            ", password='" + getPassword() + "'" +
-            ", profile='" + getProfile() + "'" +
-            ", roadmaps='" + getRoadmaps() + "'" +
-            "}";
     }
     
 
