@@ -1,0 +1,55 @@
+.trending {
+    width: 100%;
+    height: auto;
+    top: -80px;
+    position: relative;
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.container {
+    display: flex;
+    padding: 0 25px;
+    width: 75%;
+    height: 100%;
+}
+
+.title {
+    color: #525252;
+    font-size: 66px;
+    font-weight: 700;
+    margin: 25px 0 0 0;
+}
+
+.paragraph {
+    font-size: 22px;
+    width: 450px;
+}
+
+.button {
+    color: white;
+    font-size: 20px;
+    background-color:#9D63D0 ;
+    border-radius: 25px;
+    padding: 10px 15px;
+}
+
+.border {
+    margin: 50px 0;
+    width: 65%;
+}
+
+.roadMap {
+    margin: 25px 0;
+    height: auto !important;
+    width: 20%;
+}
+
+
+

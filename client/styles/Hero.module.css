@@ -7,14 +7,14 @@
     /*background-position: center;*/
     /*background-repeat: no-repeat;*/
     position: relative;
-    top: -90px;
+    top: -80px;
 }
 
 .container {
     display: flex;
     width: 100%;
-    height: calc(100vh - 90px);
-    margin-top: 90px;
+    height: calc(100vh - 80px);
+    margin-top: 80px;
     justify-content: center;
     align-content: center;
 }
@@ -37,7 +37,6 @@
     width: auto;
     text-align: right;
 }
-
 
 .navSearchContainer {
     width: 50vw;
