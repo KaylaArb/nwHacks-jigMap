@@ -19,8 +19,6 @@ export default function Hero() {
     };
 
     const handleSearch = () => {
-        // router.push(`/explore`)
-        //     .then(() => window.scrollTo(0, 0));
         window.location.replace('/explore')
     };
 

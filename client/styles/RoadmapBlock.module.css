@@ -8,7 +8,6 @@
     flex-direction: column;
     background-color: white;
     filter: drop-shadow(0 0 0.75rem #B9B9B9);
-
 }
 
 .header {
@@ -35,17 +34,6 @@
     font-weight: 600;
 }
 
-.jigsaw1 {
-    display: flex;
-    width: 100%;
-    height: 60px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: #6866BD;
-    padding: 0 10px;
-}
-
 .jigsawText {
     color: white;
     font-size: 16px;
@@ -56,8 +44,23 @@
     -webkit-box-orient: vertical;
 }
 
+.jigsaw1 {
+    display: none;
+    width: 100%;
+    height: 60px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #6866BD;
+    padding: 0 10px;
+}
+
+.jigsaw1.active {
+    display: flex ;
+}
+
 .jigsaw2 {
-    display: flex;
+    display: none;
     width: 100%;
     height: 60px;
     flex-direction: row;
@@ -66,6 +69,41 @@
     background-color: #8DBD66;
     padding: 0 10px;
 }
+
+.jigsaw2.active {
+    display: flex ;
+}
+
+.jigsaw3 {
+    display: none;
+    width: 100%;
+    height: 60px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #BD6666;
+    padding: 0 10px;
+}
+
+.jigsaw3.active {
+    display: flex ;
+}
+
+.jigsaw4 {
+    display: none;
+    width: 100%;
+    height: 60px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #BE9167;
+    padding: 0 10px;
+}
+
+.jigsaw4.active {
+    display: flex ;
+}
+
 
 .footer {
     display: flex;
