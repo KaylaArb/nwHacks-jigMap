@@ -6,7 +6,7 @@ import RoadmapBlock2 from "../components/RoadmapBlock2";
 
 import React from "react";
 
-export default function Roadmaps() {
+export default function Roadmaps({data}) {
     return (
         <div className={styles.container}>
             <Header/>
@@ -37,8 +37,6 @@ export default function Roadmaps() {
                     <div className={styles.item}>
                         <RoadmapBlock/>
                     </div>
-
-
                 </div>
             </main>
             <Footer/>

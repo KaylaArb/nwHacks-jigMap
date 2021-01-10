@@ -16,17 +16,25 @@
     max-width: 1200px;
 }
 
-.videoDemo {
-    height: auto;
-    width: 65%;
-    position: relative;
-    top: -60px;
-}
-
-.createInfo {
+.exploreInfo {
     top: -20px;
     width: 100%;
     position: relative;
     object-fit: cover;
 }
 
+.masonry {
+    height: auto;
+    column-count: 3;
+}
+.item {
+    height: auto;
+    width: auto;
+    display: inline-block;
+}
+
+.paragraph {
+    font-size: 22px;
+    width: 450px;
+    margin-bottom: 50px;
+}
