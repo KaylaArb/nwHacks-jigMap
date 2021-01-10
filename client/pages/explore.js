@@ -3,7 +3,6 @@ import Footer from '../components/Footer'
 import styles from '../styles/Explore.module.css'
 import React from "react";
 import RoadmapBlock from "../components/RoadmapBlock";
-import RoadmapBlock2 from "../components/RoadmapBlock2";
 
 export default function Explore({date}) {
     return (
@@ -34,10 +33,10 @@ export default function Explore({date}) {
                         <RoadmapBlock/>
                     </div>
                     <div className={styles.item}>
-                        <RoadmapBlock2/>
+                        <RoadmapBlock/>
                     </div>
                     <div className={styles.item}>
-                        <RoadmapBlock2/>
+                        <RoadmapBlock/>
                     </div>
                     <div className={styles.item}>
                         <RoadmapBlock/>

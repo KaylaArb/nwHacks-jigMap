@@ -2,7 +2,6 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import styles from '../styles/MyRoadmaps.module.css'
 import RoadmapBlock from "../components/RoadmapBlock";
-import RoadmapBlock2 from "../components/RoadmapBlock2";
 
 import React from "react";
 
@@ -29,10 +28,10 @@ export default function Roadmaps({data}) {
                         <RoadmapBlock/>
                     </div>
                     <div className={styles.item}>
-                        <RoadmapBlock2/>
+                        <RoadmapBlock/>
                     </div>
                     <div className={styles.item}>
-                        <RoadmapBlock2/>
+                        <RoadmapBlock/>
                     </div>
                     <div className={styles.item}>
                         <RoadmapBlock/>

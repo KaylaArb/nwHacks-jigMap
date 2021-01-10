@@ -1,7 +1,7 @@
 import React from "react";
 import {useState, useEffect} from 'react';
 import styles from '../styles/FilterRoadmaps.module.css';
-import RoadmapBlock2 from "./RoadmapBlock2";
+import RoadmapBlock from "./RoadmapBlock";
 
 export default function FilterRoadmaps() {
 
@@ -10,7 +10,7 @@ export default function FilterRoadmaps() {
             <div className={styles.allRoadmaps}>
                 <h4 className={styles.h4}>Jigsaw Pieces</h4>
                 <p className={styles.paragraph}> Filter through the roadsmaps you are subscribed to and fork them to add on your own twist.</p>
-                <RoadmapBlock2/>
+                <RoadmapBlock/>
             </div>
             <div className={styles.filterContainer}>
                 <div className={styles.filterBox}>
