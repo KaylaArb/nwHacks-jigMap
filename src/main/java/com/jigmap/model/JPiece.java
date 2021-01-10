@@ -35,17 +35,29 @@ public class JPiece {
     )
     private List<User> userlikes  = new ArrayList<User>();
 
+    @ManyToMany(cascade=CascadeType.ALL)
+    @JoinTable(
+        name = "jpieces_clicks",
+        joinColumns = @JoinColumn(
+            name = "jpiece_id"
+        ),
+        inverseJoinColumns = @JoinColumn(
+            name = "user_id"
+        )
+    )
+    private List<User> userclicks  = new ArrayList<User>();
+
     public JPiece() {
     }
 
-
-    public JPiece(Long id, String text, String type, Date createOn, int orderNumber, List<User> userlikes) {
+    public JPiece(Long id, String text, String type, Date createOn, int orderNumber, List<User> userlikes, List<User> userclicks) {
         this.id = id;
         this.text = text;
         this.type = type;
         this.createOn = createOn;
         this.orderNumber = orderNumber;
         this.userlikes = userlikes;
+        this.userclicks = userclicks;
     }
 
     public Long getId() {
@@ -88,12 +100,20 @@ public class JPiece {
         this.orderNumber = orderNumber;
     }
 
-    public List<User> getUserlikes() {  
+    public List<User> getUserlikes() {
         return this.userlikes;
     }
 
     public void setUserlikes(List<User> userlikes) {
         this.userlikes = userlikes;
+    }
+
+    public List<User> getuserclicks() {
+        return this.userclicks;
+    }
+
+    public void setuserclicks(List<User> userclicks) {
+        this.userclicks = userclicks;
     }
 
     @Override
@@ -105,9 +125,9 @@ public class JPiece {
             ", createOn='" + getCreateOn() + "'" +
             ", orderNumber='" + getOrderNumber() + "'" +
             ", userlikes='" + getUserlikes() + "'" +
+            ", userclicks='" + getuserclicks() + "'" +
             "}";
     }
-    
 
 
 }

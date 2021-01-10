@@ -43,11 +43,15 @@ public class User {
     private List<Roadmap> subscribedRoadmaps = new ArrayList<Roadmap>();
     @ManyToMany(mappedBy = "userlikes", cascade=CascadeType.ALL)
     private List<JPiece> likedJPieces = new ArrayList<JPiece>();
+    @ManyToMany(mappedBy = "userclicks", cascade=CascadeType.ALL)
+    private List<JPiece> clickedJPieces = new ArrayList<JPiece>();
 
     public User() {
     }
 
-    public User(Long id, String userName, Date dateOfBirth, String email, String password, String profile, List<Roadmap> roadmaps, List<Roadmap> likedRoadmaps, List<Roadmap> subscribedRoadmaps) {
+    
+
+    public User(Long id, String userName, Date dateOfBirth, String email, String password, String profile, List<Roadmap> roadmaps, List<Roadmap> likedRoadmaps, List<Roadmap> subscribedRoadmaps, List<JPiece> likedJPieces, List<JPiece> clickedJPieces) {
         this.id = id;
         this.userName = userName;
         this.dateOfBirth = dateOfBirth;
@@ -57,8 +61,9 @@ public class User {
         this.roadmaps = roadmaps;
         this.likedRoadmaps = likedRoadmaps;
         this.subscribedRoadmaps = subscribedRoadmaps;
+        this.likedJPieces = likedJPieces;
+        this.clickedJPieces = clickedJPieces;
     }
-
 
     public Long getId() {
         return this.id;
@@ -67,8 +72,6 @@ public class User {
     public void setId(Long id) {
         this.id = id;
     }
-    
-
 
     public String getUserName() {
         return this.userName;
@@ -110,7 +113,6 @@ public class User {
         this.profile = profile;
     }
 
-
     public List<Roadmap> getRoadmaps() {
         return this.roadmaps;
     }
@@ -118,7 +120,6 @@ public class User {
     public void setRoadmaps(List<Roadmap> roadmaps) {
         this.roadmaps = roadmaps;
     }
-
 
     public List<Roadmap> getLikedRoadmaps() {
         return this.likedRoadmaps;
@@ -136,7 +137,21 @@ public class User {
         this.subscribedRoadmaps = subscribedRoadmaps;
     }
 
-    
+    public List<JPiece> getLikedJPieces() {
+        return this.likedJPieces;
+    }
+
+    public void setLikedJPieces(List<JPiece> likedJPieces) {
+        this.likedJPieces = likedJPieces;
+    }
+
+    public List<JPiece> getClickedJPieces() {
+        return this.clickedJPieces;
+    }
+
+    public void setClickedJPieces(List<JPiece> clickedJPieces) {
+        this.clickedJPieces = clickedJPieces;
+    }
 
     @Override
     public String toString() {
@@ -148,8 +163,10 @@ public class User {
             ", password='" + getPassword() + "'" +
             ", profile='" + getProfile() + "'" +
             ", roadmaps='" + getRoadmaps() + "'" +
-            ", likeRoadmaps='" + getLikedRoadmaps() + "'" +
+            ", likedRoadmaps='" + getLikedRoadmaps() + "'" +
             ", subscribedRoadmaps='" + getSubscribedRoadmaps() + "'" +
+            ", likedJPieces='" + getLikedJPieces() + "'" +
+            ", clickedJPieces='" + getClickedJPieces() + "'" +
             "}";
     }
 
