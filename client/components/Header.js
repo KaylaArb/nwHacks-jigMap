@@ -7,6 +7,7 @@ export default function Header({activePage, user}) {
     const user1 = ["user"]
 
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isShown, setIsShown] = useState(false);
 
     const listenScrollEvent = e => {
         if (window.scrollY > 0) {
@@ -74,11 +75,17 @@ export default function Header({activePage, user}) {
 
                 </div>
 
-                <div className={`${styles.userPic} ${user1 ? styles.active : ''}`}>
+                <div className={`${styles.userPic} ${user1 ? styles.active : ''}`}
+                     onMouseEnter={() => setIsShown(true)}
+                     onMouseLeave={() => setIsShown(false)}>
                     <Link href="/roadmaps"><img src="/profilePic.svg" alt="profile picture"
-                                                  className={`${styles.profilePic} ${isScrolled ? styles.active : ''}`}/></Link>
+                                                className={`${styles.profilePic} ${isScrolled ? styles.active : ''}`}/></Link>
                 </div>
             </div>
+            {/*<div>*/}
+            {/*    <img src="/userMenu.svg" alt="user menu"*/}
+            {/*         className={`${styles.userMenu} ${isShown ? styles.active : ''}`}/>*/}
+            {/*</div>*/}
         </header>
     )
 }

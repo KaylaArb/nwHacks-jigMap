@@ -125,16 +125,22 @@ header.active {
 
 .userPic {
     display: none;
+    cursor: pointer;
 }
 
 .userPic.active {
     display: inline-block;
 }
 
-/*.userLinks {*/
-/*    display: none;*/
-/*}*/
+.userMenu {
+    position: absolute;
+    right: 142px;
+    width: 300px;
+    top: 75px;
+    display: none;
+}
 
-/*.userLinks.active{*/
-/*    display: inline-block;*/
-/*}*/
+.userMenu.active {
+    display: block;
+}
+
