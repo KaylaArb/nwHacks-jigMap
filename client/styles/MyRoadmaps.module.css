@@ -1,5 +1,5 @@
 .container {
-    min-height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,6 +8,7 @@
 
 .main {
     display: flex;
+    height: auto;
     padding-top: 50px;
     width: 100%;
     flex-direction: column;
@@ -21,13 +22,6 @@
     width: 100%;
     position: relative;
     object-fit: cover;
-}
-
-.gridLayout {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
-    grid-auto-rows: 20px;
 }
 
 .masonry {

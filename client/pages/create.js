@@ -7,6 +7,8 @@ import Builder from "../components/RoadMapBuilder";
 import React from "react";
 
 export default function Create() {
+
+
     return (
         <div className={styles.container}>
             <Header activePage={'Create'}/>
@@ -19,3 +21,12 @@ export default function Create() {
         </div>
     )
 }
+
+// export async function getServerSideProps() {
+//     const res = await fetch(`https://...`)
+//     const data = await res.json()
+//
+//     return {
+//         props: {data},
+//     }
+// }

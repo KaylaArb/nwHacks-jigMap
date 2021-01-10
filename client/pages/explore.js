@@ -4,7 +4,7 @@ import styles from '../styles/Explore.module.css'
 import React from "react";
 import RoadmapBlock from "../components/RoadmapBlock";
 
-export default function Explore({date}) {
+export default function Explore({data}) {
     return (
         <div className={styles.container}>
             <Header activePage={'Explore'}/>
@@ -17,33 +17,24 @@ export default function Explore({date}) {
                         discipline.</p>
                 </div>
                 <div className={styles.masonry}>
-                    {/*{data.map((roadmap) =>(*/}
-                    {/*    <RoadmapBlock key={roadmap.id} roadmap={roadmap}/>*/}
-                    {/*))}*/}
-                    <div className={styles.item}>
-                        <RoadmapBlock/>
-                    </div>
-                    <div className={styles.item}>
-                        <RoadmapBlock/>
-                    </div>
-                    <div className={styles.item}>
-                        <RoadmapBlock/>
-                    </div>
-                    <div className={styles.item}>
-                        <RoadmapBlock/>
-                    </div>
-                    <div className={styles.item}>
-                        <RoadmapBlock/>
-                    </div>
-                    <div className={styles.item}>
-                        <RoadmapBlock/>
-                    </div>
-                    <div className={styles.item}>
-                        <RoadmapBlock/>
-                    </div>
+
+                        {data.reverse().map((roadmap) =>(
+                            <div className={styles.item}><RoadmapBlock key={roadmap.id} data={roadmap}/> </div>
+                        ))}
                 </div>
             </main>
             <Footer/>
         </div>
     )
+}
+
+export async function getServerSideProps() {
+    const res = await fetch(`https://nwhacks-backend.herokuapp.com/api/v1/roadmap/`)
+    const data = await res.json()
+    console.log("worked here")
+    console.log(data)
+
+    return {
+        props: {data},
+    }
 }
