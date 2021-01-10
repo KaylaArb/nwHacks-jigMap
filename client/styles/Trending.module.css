@@ -1,0 +1,44 @@
+.trending {
+    width: 100%;
+    height: auto;
+    top: -70px;
+    position: relative;
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.paragraph {
+    font-size: 22px;
+    width: 450px;
+}
+
+.button {
+    color: white;
+    font-size: 20px;
+    background-color:#9D63D0 ;
+    border-radius: 25px;
+    padding: 10px 15px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.border {
+    margin: 50px 0;
+    width: 75%;
+}
+
+.roadMap {
+    margin: 25px 0;
+    height: auto !important;
+    width: 75%;
+}
+
+
+

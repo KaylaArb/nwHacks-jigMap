@@ -1,0 +1,40 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    display: flex;
+    padding-top: 50px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+}
+
+.exploreInfo {
+    top: -20px;
+    width: 100%;
+    position: relative;
+    object-fit: cover;
+}
+
+.masonry {
+    height: auto;
+    column-count: 3;
+}
+.item {
+    height: auto;
+    width: auto;
+    display: inline-block;
+}
+
+.paragraph {
+    font-size: 22px;
+    width: 450px;
+    margin-bottom: 50px;
+}

@@ -1,0 +1,32 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    display: flex;
+    padding-top: 50px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+}
+
+.videoDemo {
+    height: auto;
+    width: 65%;
+    position: relative;
+    top: -60px;
+}
+
+.createInfo {
+    top: -20px;
+    width: 100%;
+    position: relative;
+    object-fit: cover;
+}
+

@@ -1,0 +1,146 @@
+.header {
+    top: 0;
+    position: sticky;
+    height: 70px;
+    width: 100%;
+    padding: 0 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    z-index: 10;
+    transition: all 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    width: 1200px;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+}
+
+header.active {
+    box-shadow: 0px 5px 15px 0 rgba(0, 0, 0, 0.15);
+    background-color: white;
+}
+
+.header__title {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.logo {
+    display: inline-block;
+    height: 25px;
+    width: auto;
+    cursor: pointer;
+}
+
+.navLinks {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    color: white
+}
+
+.links {
+    display: inline-block;
+    padding: 10px 25px;
+    text-decoration: none;
+    font-size: 21px;
+    font-weight: 500;
+    transition: all 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.linksUser {
+    display: inline-block;
+    padding: 10px 25px;
+    text-decoration: none;
+    font-size: 21px;
+    font-weight: 500;
+    color: black !important;
+}
+
+.linksUser.active {
+    color: #5D2D86;
+    font-weight: 600;
+}
+
+.navLinks.active {
+    color: black;
+}
+
+.navSearchContainer {
+    width: 400px;
+    display: flex;
+    border-radius: 5px;
+    position: relative;
+}
+
+.loginButton {
+    background-color: white;
+    cursor: pointer;
+    color: #612D8E;
+    font-size: 21px;
+    font-weight: 600;
+    border-radius: 15px;
+    border: none;
+    padding: 10px 25px;
+    transition: all 0.3s;
+    transition-timing-function: ease-in-out;
+    outline:none;
+}
+
+.loginButton.active {
+    background-color: #612D8E;
+    color: white;
+}
+
+.profilePic {
+    position: relative;
+    top: 25px;
+    display: block;
+    height: 115px;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    cursor: pointer;
+    transition: all 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.profilePic.active {
+    display: inline-block;
+    height: 65px;
+    width: auto;
+    cursor: pointer;
+    top: 0;
+}
+
+.userPic {
+    display: none;
+    cursor: pointer;
+}
+
+.userPic.active {
+    display: inline-block;
+}
+
+.userMenu {
+    position: absolute;
+    right: 142px;
+    width: 300px;
+    top: 75px;
+    display: none;
+}
+
+.userMenu.active {
+    display: block;
+}
+

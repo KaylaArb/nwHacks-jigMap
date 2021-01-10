@@ -1,0 +1,37 @@
+.container {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    display: flex;
+    height: auto;
+    padding-top: 50px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+}
+
+.roadmapInfo {
+    top: -20px;
+    width: 100%;
+    position: relative;
+    object-fit: cover;
+}
+
+.masonry {
+    height: auto;
+    column-count: 3;
+}
+.item {
+    height: auto;
+    width: auto;
+    display: inline-block;
+
+}
+

@@ -9,8 +9,28 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  font-family: Helvetica;
+
 }
 
 * {
   box-sizing: border-box;
+}
+
+p {
+  font-family: Helvetica;
+}
+
+h2 {
+  color: #525252;
+  font-size: 66px;
+  font-weight: 700;
+  margin: 25px 0 0 0;
+}
+
+h3 {
+  color: #525252;
+  font-size: 50px;
+  font-weight: 700;
+  margin: 25px 0 0 0;
 }

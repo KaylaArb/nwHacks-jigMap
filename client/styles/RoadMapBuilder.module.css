@@ -1,0 +1,195 @@
+.builder {
+    width: 100%;
+    height: auto;
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.container {
+    width: 75%;
+    height: auto;
+    padding: 50px;
+    margin: 50px 0;
+    background-color: #C4C4C4;
+    border-radius: 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.form {
+    width: 100%;
+}
+
+.textInfo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputBox {
+    background-color: #C4C4C4;
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid #828282;
+    margin: 5px 0;
+    font-size: 18px;
+    outline:none;
+}
+
+.h4 {
+    text-align: left;
+    margin: 10px 0;
+    font-size: 40px;
+    color: #525252;
+}
+
+.jigsawInfo {
+    width: 100%;
+    height: 100%;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.jigsawBoxTop {
+    width: 100%;
+    height: 120px;
+    padding: 0 0 15px 60px;
+    background-color: transparent;
+    font-size: 18px;
+    border: none;
+    background-image: url("../public/jigsawTop.svg");
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    outline:none;
+}
+
+.jigsawBoxBottom {
+    width: 100%;
+    height: 80px;
+    top: -20px;
+    position: relative;
+    padding: 0 0 0 60px;
+    background-color: transparent;
+    font-size: 18px;
+    border: none;
+    background-image: url("../public/jigsawBottom.svg");
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    outline:none;
+}
+
+.uploadImage {
+    position: relative;
+    left: 50px;
+    top:-10px;
+    cursor: pointer;
+}
+
+.uploadImage2 {
+    position: relative;
+    left: 50px;
+    top:-15px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.jigsawRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.priceInfo {
+    margin: 10px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.priceInfo  p {
+    color: #525252;
+    font-size: 30px;
+    margin: 5px 25px 0 0;
+}
+
+.priceInput{
+    width: 15%;
+    height: 50px;
+    background-color: white;
+    border-radius: 15px;
+    outline:none;
+    border: none;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.submitButton {
+    color: white;
+    border: none;
+    font-size: 20px;
+    background-color:#9D63D0 ;
+    border-radius: 25px;
+    padding: 10px 15px;
+    margin: 10px;
+    outline:none;
+    cursor: pointer;
+}
+
+.buttonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.jigsawBoxTop2 {
+    width: 100%;
+    height: 120px;
+    top: -25px;
+    position: relative;
+    padding: 0 0 15px 60px;
+    background-color: transparent;
+    font-size: 18px;
+    border: none;
+    background-image: url("../public/jigsawTop.svg");
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    outline:none;
+    z-index: 1;
+}
+
+.uploadImage3 {
+    position: relative;
+    left: 50px;
+    top:-35px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.addButton {
+    border-radius: 15px;
+    color: white;
+    background-color: #9D63D0;
+    /*padding: 5px;*/
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+}
+
