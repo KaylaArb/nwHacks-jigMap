@@ -9,8 +9,9 @@ import React from "react";
 export default function Create() {
     return (
         <div className={styles.container}>
-            <Header/>
+            <Header activePage={'Create'}/>
             <main className={styles.main}>
+                <img src="/createInfo.svg" alt="creat information" className={styles.createInfo}/>
                 <img src="/videoDemo.svg" alt="video demo" className={styles.videoDemo}/>
                 <Builder/>
             </main>

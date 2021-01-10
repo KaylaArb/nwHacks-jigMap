@@ -11,7 +11,7 @@ export default function Trending() {
                 <p className={styles.paragraph}> Explore thousands of roadmaps for your courses, ideas or any
                     discipline.</p>
             </div>
-            <img src="/demo_map.svg" alt="roadmap" className={styles.roadMap} />
+            <img src="/trending.svg" alt="roadmap" className={styles.roadMap} />
             <div>
                 <button className={styles.button}>
                     Explore All →

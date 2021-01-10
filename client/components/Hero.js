@@ -1,8 +1,28 @@
 import React from "react";
 import Link from 'next/link'
 import styles from '../styles/Hero.module.css';
+import { useState, useRef } from 'react';
 
 export default function Hero() {
+    const [searchValue, setSearchValue] = useState('');
+
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            handleSearch();
+        }
+    }
+
+    const handleChangeSearchValue = (e) => {
+        if (e && e.target) {
+            setSearchValue(e.target.value);
+        }
+    };
+
+    const handleSearch = () => {
+        // router.push(`/explore`)
+        //     .then(() => window.scrollTo(0, 0));
+        window.location.replace('/explore')
+    };
 
     return (
         <div className={styles.hero}>
@@ -12,25 +32,17 @@ export default function Hero() {
                         <button
                             type="submit"
                             className={styles.formButton}
-                            // onClick={handleSearch}
+                            onClick={handleSearch}
                         />
                         <input
                             type="text"
                             name="search"
                             placeholder="Search all the roadmaps..."
                             className={styles.searchInput}
-                            // value={searchValue}
-                            // onKeyDown={handleKeyDown}
-                            // onChange={handleChangeSearchValue}
+                            value={searchValue}
+                            onKeyDown={handleKeyDown}
+                            onChange={handleChangeSearchValue}
                             />
-                        {/*{*/}
-                        {/*    searchValue && (*/}
-                        {/*        <button*/}
-                        {/*            className={styles.clearButton}*/}
-                        {/*            onClick={() => setSearchValue('')} />*/}
-                        {/*    )*/}
-                        {/*}*/}
-
 
                     </div>
                     <p>100M+ roadmaps created on JigMap</p>

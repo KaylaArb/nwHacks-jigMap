@@ -10,7 +10,7 @@ export default function Features() {
             <div >
                 <p className={styles.paragraph}> You can use jigsaw pieces for any purpose out there an let others benefit from it.</p>
             </div>
-            <img src="/demo_map.svg" alt="roadmap" className={styles.roadMap} />
+            <img src="/features.svg" alt="roadmap" className={styles.roadMap} />
         </div>
     )
 }

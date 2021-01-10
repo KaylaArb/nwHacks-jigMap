@@ -5,13 +5,22 @@
     width: 100%;
     padding: 0 75px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
     z-index: 10;
     transition: all 0.3s;
     transition-timing-function: ease-in-out;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    width: 1200px;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
 }
 
 header.active {
@@ -49,6 +58,20 @@ header.active {
     transition-timing-function: ease-in-out;
 }
 
+.linksUser {
+    display: inline-block;
+    padding: 10px 25px;
+    text-decoration: none;
+    font-size: 21px;
+    font-weight: 500;
+    color: black !important;
+}
+
+.linksUser.active {
+    color: #5D2D86;
+    font-weight: 600;
+}
+
 .navLinks.active {
     color: black;
 }
@@ -61,7 +84,6 @@ header.active {
 }
 
 .loginButton {
-    display: inline-block;
     background-color: white;
     cursor: pointer;
     color: #612D8E;
@@ -79,3 +101,40 @@ header.active {
     background-color: #612D8E;
     color: white;
 }
+
+.profilePic {
+    position: relative;
+    top: 25px;
+    display: block;
+    height: 115px;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    cursor: pointer;
+    transition: all 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.profilePic.active {
+    display: inline-block;
+    height: 65px;
+    width: auto;
+    cursor: pointer;
+    top: 0;
+}
+
+.userPic {
+    display: none;
+}
+
+.userPic.active {
+    display: inline-block;
+}
+
+/*.userLinks {*/
+/*    display: none;*/
+/*}*/
+
+/*.userLinks.active{*/
+/*    display: inline-block;*/
+/*}*/
