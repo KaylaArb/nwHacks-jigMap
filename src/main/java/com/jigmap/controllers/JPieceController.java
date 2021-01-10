@@ -5,10 +5,8 @@ import java.util.Map;
 import java.util.Optional;
 
 import com.jigmap.model.JPiece;
-import com.jigmap.model.Roadmap;
 import com.jigmap.model.User;
 import com.jigmap.repository.JPieceRepository;
-import com.jigmap.repository.RoadmapRepository;
 import com.jigmap.repository.UserRepository;
 
 import org.slf4j.Logger;
@@ -23,14 +21,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(maxAge = 86400)
+@CrossOrigin(origins = "https://nwhacks-frontend.herokuapp.com/", maxAge = 86400)
 @RestController
 @RequestMapping("/api/v1/jpiece")
 public class JPieceController {
     
     @Autowired
     private JPieceRepository jPieceRepository;
-    
+
     @Autowired
     private UserRepository userRepository;
 
