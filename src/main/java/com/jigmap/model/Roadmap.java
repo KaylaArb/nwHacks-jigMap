@@ -3,7 +3,6 @@ package com.jigmap.model;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -13,21 +12,27 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="roadmap")
 public class Roadmap {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String description;
     private int price;
+    private int totalTime;
     private Date publicationDate;
     private int rank;
     private int classifiedPrediction;
     private int user_id;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name="rm_id", referencedColumnName = "id")
+    private List<JPiece> jPieces  = new ArrayList<>();
 
     @ManyToMany(cascade=CascadeType.ALL)
     @JoinTable(
@@ -44,25 +49,28 @@ public class Roadmap {
     @JoinTable(name = "roadmap_subscriptions", joinColumns = @JoinColumn(name = "roadmap_id"),
                inverseJoinColumns = @JoinColumn(name = "user_id"))
     private List<User> usersubscriptions  = new ArrayList<User>();
+    
+
     public Roadmap() {
     }
 
+    
 
 
-    public Roadmap(Long id, String title, String description, int price, Date publicationDate, int rank, int classifiedPrediction, int user_id, List<User> userlikes, List<User> usersubscriptions) {
+    public Roadmap(Long id, String title, String description, int price, int totalTime, Date publicationDate, int rank, int classifiedPrediction, int user_id, List<JPiece> jPieces, List<User> userlikes, List<User> usersubscriptions) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.price = price;
+        this.totalTime = totalTime;
         this.publicationDate = publicationDate;
         this.rank = rank;
         this.classifiedPrediction = classifiedPrediction;
         this.user_id = user_id;
+        this.jPieces = jPieces;
         this.userlikes = userlikes;
         this.usersubscriptions = usersubscriptions;
     }
-    
-
 
     public Long getId() {
         return this.id;
@@ -96,6 +104,14 @@ public class Roadmap {
         this.price = price;
     }
 
+    public int getTotalTime() {
+        return this.totalTime;
+    }
+
+    public void setTotalTime(int totalTime) {
+        this.totalTime = totalTime;
+    }
+
     public Date getPublicationDate() {
         return this.publicationDate;
     }
@@ -120,7 +136,6 @@ public class Roadmap {
         this.classifiedPrediction = classifiedPrediction;
     }
 
-
     public int getUser_id() {
         return this.user_id;
     }
@@ -129,6 +144,13 @@ public class Roadmap {
         this.user_id = user_id;
     }
 
+    public List<JPiece> getJPieces() {
+        return this.jPieces;
+    }
+
+    public void setJPieces(List<JPiece> jPieces) {
+        this.jPieces = jPieces;
+    }
 
     public List<User> getUserlikes() {
         return this.userlikes;
@@ -146,24 +168,6 @@ public class Roadmap {
         this.usersubscriptions = usersubscriptions;
     }
 
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == this)
-            return true;
-        if (!(o instanceof Roadmap)) {
-            return false;
-        }
-        Roadmap roadmap = (Roadmap) o;
-        return Objects.equals(id, roadmap.id) && Objects.equals(title, roadmap.title) && Objects.equals(description, roadmap.description) && price == roadmap.price && Objects.equals(publicationDate, roadmap.publicationDate) && rank == roadmap.rank && classifiedPrediction == roadmap.classifiedPrediction;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, title, description, price, publicationDate, rank, classifiedPrediction);
-    }
-
-
     @Override
     public String toString() {
         return "{" +
@@ -171,10 +175,14 @@ public class Roadmap {
             ", title='" + getTitle() + "'" +
             ", description='" + getDescription() + "'" +
             ", price='" + getPrice() + "'" +
+            ", totalTime='" + getTotalTime() + "'" +
             ", publicationDate='" + getPublicationDate() + "'" +
             ", rank='" + getRank() + "'" +
             ", classifiedPrediction='" + getClassifiedPrediction() + "'" +
             ", user_id='" + getUser_id() + "'" +
+            ", jPieces='" + getJPieces() + "'" +
+            ", userlikes='" + getUserlikes() + "'" +
+            ", usersubscriptions='" + getUsersubscriptions() + "'" +
             "}";
     }
     

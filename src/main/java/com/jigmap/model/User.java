@@ -20,7 +20,7 @@ import javax.validation.constraints.NotBlank;
 @Table(name="rm_user")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotBlank(message = "User Name is mandatory")
     private String userName;
@@ -33,16 +33,19 @@ public class User {
 
     @OneToMany(targetEntity=Roadmap.class, fetch = FetchType.LAZY)
     @JoinColumn(name= "user_id")
+    // @OneToMany(cascade = CascadeType.ALL)
+    // @JoinColumn(name="user_id", referencedColumnName = "id")
     private List<Roadmap> roadmaps  = new ArrayList<>();
 
     @ManyToMany(mappedBy = "userlikes", cascade=CascadeType.ALL)
     private List<Roadmap> likedRoadmaps = new ArrayList<Roadmap>();
     @ManyToMany(mappedBy = "usersubscriptions", cascade=CascadeType.ALL)
     private List<Roadmap> subscribedRoadmaps = new ArrayList<Roadmap>();
+    @ManyToMany(mappedBy = "userlikes", cascade=CascadeType.ALL)
+    private List<JPiece> likedJPieces = new ArrayList<JPiece>();
 
     public User() {
     }
-
 
     public User(Long id, String userName, Date dateOfBirth, String email, String password, String profile, List<Roadmap> roadmaps, List<Roadmap> likedRoadmaps, List<Roadmap> subscribedRoadmaps) {
         this.id = id;
