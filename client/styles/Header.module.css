@@ -36,15 +36,21 @@ header.active {
     display: flex;
     height: 100%;
     align-items: center;
+    color: white
 }
 
 .links {
     display: inline-block;
     padding: 10px 25px;
     text-decoration: none;
-    color: black;
     font-size: 21px;
     font-weight: 600;
+    transition: all 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.navLinks.active {
+    color: black;
 }
 
 .navSearchContainer {

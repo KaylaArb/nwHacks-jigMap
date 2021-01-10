@@ -4,6 +4,7 @@ import Footer from '../components/Footer'
 import Hero from "../components/Hero";
 import styles from '../styles/Home.module.css'
 import Trending from "../components/Trending";
+import Features from "../components/Features";
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
       <main className={styles.main}>
           <Hero/>
           <Trending/>
-          <p>Hello</p>
+          <Features/>
       </main>
       <Footer/>
     </div>

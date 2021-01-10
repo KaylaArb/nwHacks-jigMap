@@ -25,7 +25,7 @@ export default function Header() {
                 <Link href="/"><img src="/jigmap_logo.svg" alt="logo" className={styles.logo} /></Link>
             </div>
 
-            <div className={styles.navLinks}>
+            <div className={`${styles.navLinks} ${isScrolled ? styles.active : ''}`}>
                 <Link href="/about">
                     <a className={styles.links}>
                         About

@@ -9,8 +9,14 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  font-family: Helvetica;
+
 }
 
 * {
   box-sizing: border-box;
+}
+
+p {
+  font-family: Helvetica;
 }
