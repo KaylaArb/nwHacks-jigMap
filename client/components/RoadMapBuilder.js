@@ -51,8 +51,6 @@ export default function Builder() {
                         <button type="submit" className={styles.submitButton}>Post Roadmap</button>
                     </div>
                 </form>
-
-
             </div>
 
         </div>
