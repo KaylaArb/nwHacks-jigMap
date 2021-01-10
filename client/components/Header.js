@@ -75,7 +75,7 @@ export default function Header({activePage, user}) {
                 </div>
 
                 <div className={`${styles.userPic} ${user1 ? styles.active : ''}`}>
-                    <Link href="/myRoadmaps"><img src="/profilePic.svg" alt="profile picture"
+                    <Link href="/roadmaps"><img src="/profilePic.svg" alt="profile picture"
                                                   className={`${styles.profilePic} ${isScrolled ? styles.active : ''}`}/></Link>
                 </div>
             </div>
