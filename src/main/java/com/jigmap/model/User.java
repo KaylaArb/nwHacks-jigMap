@@ -5,13 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
@@ -21,8 +21,7 @@ import javax.validation.constraints.NotBlank;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "user_id")
-    private Long user_id;
+    private Long id;
     @NotBlank(message = "User Name is mandatory")
     private String userName;
     private Date dateOfBirth;
@@ -34,31 +33,38 @@ public class User {
 
     @OneToMany(targetEntity=Roadmap.class, fetch = FetchType.LAZY)
     @JoinColumn(name= "user_id")
-    private List<Roadmap> roadmaps  = new ArrayList<>();;
+    private List<Roadmap> roadmaps  = new ArrayList<>();
+
+    @ManyToMany(mappedBy = "userlikes", cascade=CascadeType.ALL)
+    private List<Roadmap> likedRoadmaps = new ArrayList<Roadmap>();
+    @ManyToMany(mappedBy = "usersubscriptions", cascade=CascadeType.ALL)
+    private List<Roadmap> subscribedRoadmaps = new ArrayList<Roadmap>();
 
     public User() {
     }
 
 
-
-    public User(Long user_id, String userName, Date dateOfBirth, String email, String password, String profile, List<Roadmap> roadmaps) {
-        this.user_id = user_id;
+    public User(Long id, String userName, Date dateOfBirth, String email, String password, String profile, List<Roadmap> roadmaps, List<Roadmap> likedRoadmaps, List<Roadmap> subscribedRoadmaps) {
+        this.id = id;
         this.userName = userName;
         this.dateOfBirth = dateOfBirth;
         this.email = email;
         this.password = password;
         this.profile = profile;
         this.roadmaps = roadmaps;
+        this.likedRoadmaps = likedRoadmaps;
+        this.subscribedRoadmaps = subscribedRoadmaps;
+    }
+
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
     
-
-    public Long getUser_id() {
-        return this.user_id;
-    }
-
-    public void setUser_id(Long user_id) {
-        this.user_id = user_id;
-    }
 
 
     public String getUserName() {
@@ -109,6 +115,40 @@ public class User {
     public void setRoadmaps(List<Roadmap> roadmaps) {
         this.roadmaps = roadmaps;
     }
+
+
+    public List<Roadmap> getLikedRoadmaps() {
+        return this.likedRoadmaps;
+    }
+
+    public void setLikedRoadmaps(List<Roadmap> likedRoadmaps) {
+        this.likedRoadmaps = likedRoadmaps;
+    }
+
+    public List<Roadmap> getSubscribedRoadmaps() {
+        return this.subscribedRoadmaps;
+    }
+
+    public void setSubscribedRoadmaps(List<Roadmap> subscribedRoadmaps) {
+        this.subscribedRoadmaps = subscribedRoadmaps;
+    }
+
     
+
+    @Override
+    public String toString() {
+        return "{" +
+            " id='" + getId() + "'" +
+            ", userName='" + getUserName() + "'" +
+            ", dateOfBirth='" + getDateOfBirth() + "'" +
+            ", email='" + getEmail() + "'" +
+            ", password='" + getPassword() + "'" +
+            ", profile='" + getProfile() + "'" +
+            ", roadmaps='" + getRoadmaps() + "'" +
+            ", likeRoadmaps='" + getLikedRoadmaps() + "'" +
+            ", subscribedRoadmaps='" + getSubscribedRoadmaps() + "'" +
+            "}";
+    }
+
 
 }

@@ -1,12 +1,18 @@
 package com.jigmap.model;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -23,11 +29,27 @@ public class Roadmap {
     private int classifiedPrediction;
     private int user_id;
 
+    @ManyToMany(cascade=CascadeType.ALL)
+    @JoinTable(
+        name = "roadmap_likes",
+        joinColumns = @JoinColumn(
+            name = "roadmap_id"
+        ),
+        inverseJoinColumns = @JoinColumn(
+            name = "user_id"
+        )
+    )
+    private List<User> userlikes  = new ArrayList<User>();
+    @ManyToMany(cascade=CascadeType.ALL)
+    @JoinTable(name = "roadmap_subscriptions", joinColumns = @JoinColumn(name = "roadmap_id"),
+               inverseJoinColumns = @JoinColumn(name = "user_id"))
+    private List<User> usersubscriptions  = new ArrayList<User>();
     public Roadmap() {
     }
 
 
-    public Roadmap(Long id, String title, String description, int price, Date publicationDate, int rank, int classifiedPrediction, int user_id) {
+
+    public Roadmap(Long id, String title, String description, int price, Date publicationDate, int rank, int classifiedPrediction, int user_id, List<User> userlikes, List<User> usersubscriptions) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -36,7 +58,10 @@ public class Roadmap {
         this.rank = rank;
         this.classifiedPrediction = classifiedPrediction;
         this.user_id = user_id;
+        this.userlikes = userlikes;
+        this.usersubscriptions = usersubscriptions;
     }
+    
 
 
     public Long getId() {
@@ -104,6 +129,22 @@ public class Roadmap {
         this.user_id = user_id;
     }
 
+
+    public List<User> getUserlikes() {
+        return this.userlikes;
+    }
+
+    public void setUserlikes(List<User> userlikes) {
+        this.userlikes = userlikes;
+    }
+
+    public List<User> getUsersubscriptions() {
+        return this.usersubscriptions;
+    }
+
+    public void setUsersubscriptions(List<User> usersubscriptions) {
+        this.usersubscriptions = usersubscriptions;
+    }
 
 
     @Override
