@@ -25,13 +25,48 @@ export default function Builder() {
     //     setSearchValue('')
     // };
 
-    // function buttonFilter(buttonValue) {
-    //     let value = buttonValue;
-    //     fetch("http://localhost:8080/api/filter/" + value)
-    //         .then((response) => response.json())
-    //         .then( response => {
-    //             router.reload(window.location.pathname);})
-    // }
+    function submitRoadmap() {
+        console.log("here?")
+        let name = document.getElementById("name").value;
+        let description = document.getElementById("description").value;
+        // let jpieces = document.getElementById("firstMap").value;
+        let price = document.getElementById("price").value;
+        let firstMap = document.getElementById("firstMap").value;
+        let secondMap = document.getElementById("firstMap").value;
+
+        fetch("https://nwhacks-backend.herokuapp.com/api/v1/roadmap/new", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'},
+            body: JSON.stringify({title:name, description: description,user_id:2})})
+            .then(response => {
+                window.location.replace("/roadmaps")
+                console.log(response)
+                console.log("it worked")
+            })
+    }
+
+    async function submitRoadmap() {
+        console.log("here?")
+        let name = document.getElementById("name").value;
+        let description = document.getElementById("description").value;
+        // let jpieces = document.getElementById("firstMap").value;
+        let price = document.getElementById("price").value;
+        let firstMap = document.getElementById("firstMap").value;
+        let secondMap = document.getElementById("secondMap").value;
+
+        fetch("https://nwhacks-backend.herokuapp.com/api/v1/roadmap/new", {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+                'Content-Type': 'application/json'},
+            body: JSON.stringify({title:name, description: description,user_id:2})})
+            .then(response => {
+                // window.location.replace("/roadmaps")
+                console.log(response)
+                console.log("it worked")
+            })
+    }
 
 
     return (
@@ -65,7 +100,7 @@ export default function Builder() {
                         <input id="price" type="text" placeholder="$0.00" className={styles.priceInput}/>
                     </div>
                     <div className={styles.buttonContainer}>
-                        <button type="submit" className={styles.submitButton} onClick={submitRoadmap}>Post Roadmap</button>
+                        <button type="button" className={styles.submitButton} onClick={submitRoadmap}>Post Roadmap</button>
                     </div>
                 </form>
             </div>
@@ -74,32 +109,5 @@ export default function Builder() {
     )
 }
 
-// export async function getServerSideProps() {
-//     const res = await fetch(`https://...`)
-//     const data = await res.json()
-//
-//     return {
-//         props: {data},
-//     }
-// }
 
-function submitRoadmap() {
-    let name = document.getElementById("name").value;
-    let description = document.getElementById("description").value;
-    // let jpieces = document.getElementById("firstMap").value;
-    let price = document.getElementById("price").value;
-    let firstMap = document.getElementById("firstMap").value;
-    let secondMap = document.getElementById("firstMap").value;
-
-    fetch("https://nwhacks-backend.herokuapp.com/api/v1/roadmap/new", {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'},
-        body: JSON.stringify({title:name, description: description,user_id:2})})
-        .then(response => {
-            window.location.replace("/roadmaps")
-            console.log(response)
-            console.log("it worked")
-        })
-}
 
