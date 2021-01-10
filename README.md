@@ -1,1 +1,12 @@
-"# nwHacks-jigMap" 
+#Inspiration#
+Looking around in the world, we see a large amount of passionate students and enthusiasts keen to learn more about the latest technologies and discipline. Case studies has shown that 1 out of 2 students always find himself in a dilemma of “WHAT TO DO NEXT?” after selecting their field of study. Similarly, not to talk of students, everyone of us needs a clear picture of roadmap to follow before starting off with anything, but at the end, we are left with all of those youtube speakers saying nothing for 10-20 minutes, long essay type blogs and articles, most of them are not even relatable and we follow the roadmap as far as the tab remains open in our browser.
+
+#What it does#
+To cater all of the above problems, we have been working for past many days to device a solution to not only make the things work out, but to design the interface such that user finds familiarity with it. Our solution provides our audience with a platform to create roadmaps, add slots within their roadmaps, share it and follow others work. You can also fork other peoples roadmaps and change it as per your convenience.
+
+We are providing enterprises and companies with a facility of Premium Roadmaps to set up purchase amount for the roadmap, this can help them to post their courses and gain revenue from it. Next to provide an intuitive UI for the website, we are using vertical timelines to show all the roadmaps, you can see all of your followed roadmaps at once, or filter some combinations of them. To get an insight about how well your roadmap is doing, we have also added the infographics of line chart to give user an overview of each slots performance.
+
+We are trying to apply the Market Basket analysis on the dataset of roadmaps collected to give our users more insights about what their followers are doing taking interests in. Applying the data analysis strategies, we will be ranking all the roadmaps on the basis of their clicks and likes.
+
+#Future Functionality to be added#
+Since we have created a mockup of the complete website with currently no user active. Our first target will be to make it a versatile working website with all functionalities for the users. Linking the machine learning models with the website will be our next priority, as we want to make our Apriori Algorithm more accurate and stronger not even suggesting costumers more roadmaps, but also giving authors more insights into what their followers are seeing. Finally, we will be working many cooperations and companies to launch their courses on our website, and hiring campus ambassadors to work with us and post roadmaps for the disciplines in their university. This idea of us has a long way to go, not just in developers community but general public too.
