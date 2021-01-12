@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "https://nwhacks-frontend.herokuapp.com/", maxAge = 86400)
+//@CrossOrigin(origins = "https://nwhacks-frontend.herokuapp.com/", maxAge = 86400)
 @RestController
 @RequestMapping("/api/v1/roadmap")
 public class RoadmapController {
@@ -48,6 +48,7 @@ public class RoadmapController {
     @RequestMapping(value = "/new", 
             method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Roadmap> createRoadmap(@RequestBody Roadmap roadmap) {
+        System.out.println("In createRoadmap method.");
         return new ResponseEntity<>(roadmapRepository.save(roadmap), HttpStatus.OK);
     }
 }
