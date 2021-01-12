@@ -1,5 +1,6 @@
 package com.jigmap.config;
 
+import org.apache.catalina.filters.HttpHeaderSecurityFilter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;

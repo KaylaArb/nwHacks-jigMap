@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "https://nwhacks-frontend.herokuapp.com/", maxAge = 86400)
+//@CrossOrigin(origins = "https://nwhacks-frontend.herokuapp.com/", maxAge = 86400)
 @RestController
 @RequestMapping("/api/v1/users")
 public class UserController {
