@@ -8,7 +8,6 @@
 
 .main {
     display: flex;
-    height: auto;
     padding-top: 50px;
     width: 100%;
     flex-direction: column;
@@ -24,14 +23,9 @@
     object-fit: cover;
 }
 
-.masonry {
-    height: auto;
-    column-count: 3;
-}
 .item {
     height: auto;
     width: auto;
-    display: inline-block;
-
+    display: block;
 }
 

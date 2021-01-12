@@ -2,12 +2,10 @@ import Head from 'next/head'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import styles from '../styles/Create.module.css'
-
 import Builder from "../components/RoadMapBuilder";
 import React from "react";
 
 export default function Create() {
-
 
     return (
         <div className={styles.container}>
@@ -22,11 +20,3 @@ export default function Create() {
     )
 }
 
-// export async function getServerSideProps() {
-//     const res = await fetch(`https://...`)
-//     const data = await res.json()
-//
-//     return {
-//         props: {data},
-//     }
-// }

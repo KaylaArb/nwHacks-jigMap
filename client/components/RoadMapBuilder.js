@@ -1,7 +1,6 @@
 import React from "react";
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import styles from '../styles/RoadMapBuilder.module.css';
-import Router from "next/router";
 
 export default function Builder() {
     const [add, setAdd] = useState('');
@@ -9,60 +8,33 @@ export default function Builder() {
     const addTop = () => (
         <div className={styles.jigsawRow}>
             <img src="/uploadArrow.svg" alt="logo" className={styles.uploadImage3}/>
-            <input id="thirdMap" placeholder="or click to start writing" className={styles.jigsawBoxTop2}/>
+            <input id="thirdJigsaw" placeholder="or click to start writing" className={styles.jigsawBoxTop2}/>
         </div>
     )
 
-    // const handleSearch = () => {
-    //     const path = router.pathname
-    //     const query = router.query
-    //     query.search = searchValue
-    //     setHomePage(false);
-    //     router.push({
-    //         pathname: path,
-    //         query: query,
-    //     }).then(() => window.scrollTo(0, 0));
-    //     setSearchValue('')
-    // };
-
     function submitRoadmap() {
-        console.log("here?")
         let name = document.getElementById("name").value;
-        let description = document.getElementById("description").value;
-        // let jpieces = document.getElementById("firstMap").value;
-        let price = document.getElementById("price").value;
-        let firstMap = document.getElementById("firstMap").value;
-        let secondMap = document.getElementById("firstMap").value;
+        let descrip = document.getElementById("description").value;
+        let jigsaw1 = document.getElementById("firstJigsaw").value;
+        let jigsaw2 = document.getElementById("secondJigsaw").value;
+        let jigsaw3 = null
+        {add === 'Top' ? jigsaw3 = document.getElementById("thirdJigsaw").value : null}
+        let pieces = []
+        {jigsaw1 ? pieces.push({text: jigsaw1, orderNumber: 1}) : null}
+        {jigsaw2 ? pieces.push({text: jigsaw2, orderNumber: 2}) : null}
+        {jigsaw3 ? pieces.push({text: jigsaw3, orderNumber: 3}) : null}
 
-        fetch("https://nwhacks-backend.herokuapp.com/api/v1/roadmap/new", {
+        // Simple POST request with a JSON body using fetch
+        const requestOptions = {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'},
-            body: JSON.stringify({title:name, description: description,user_id:2})})
+            // mode: 'no-cors',
+            headers: {'content-type': 'application/json'},
+            body: JSON.stringify({ title: name, description: descrip, user_id: 3, jpieces: pieces })
+        };
+        fetch('https://nwhacks-backend.herokuapp.com/api/v1/roadmap/new', requestOptions)
+            .then(response => response.json())
             .then(response => {
-                window.location.replace("/roadmaps")
-                console.log(response)
-                console.log("it worked")
-            })
-    }
-
-    async function submitRoadmap() {
-        console.log("here?")
-        let name = document.getElementById("name").value;
-        let description = document.getElementById("description").value;
-        // let jpieces = document.getElementById("firstMap").value;
-        let price = document.getElementById("price").value;
-        let firstMap = document.getElementById("firstMap").value;
-        let secondMap = document.getElementById("secondMap").value;
-
-        fetch("https://nwhacks-backend.herokuapp.com/api/v1/roadmap/new", {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: {
-                'Content-Type': 'text/plain'},
-            body: JSON.stringify({title:name, description: description,user_id:2})})
-            .then(response => {
-                // window.location.replace("/roadmaps")
+                window.location.replace("/my-roadmaps")
                 console.log(response)
                 console.log("it worked")
             })
@@ -84,12 +56,12 @@ export default function Builder() {
                     <div className={styles.jigsawInfo}>
                         <div className={styles.jigsawRow}>
                             <img src="/uploadArrow.svg" alt="logo" className={styles.uploadImage}/>
-                            <input id="firstMap" placeholder="or click to start writing"
+                            <input id="firstJigsaw" placeholder="or click to start writing"
                                    className={styles.jigsawBoxTop}/>
                         </div>
                         <div className={styles.jigsawRow}>
                             <img src="/uploadArrow.svg" alt="logo" className={styles.uploadImage2}/>
-                            <input id="secondMap" placeholder="or click to start writing"
+                            <input id="secondJigsaw" placeholder="or click to start writing"
                                    className={styles.jigsawBoxBottom}/>
                         </div>
                         {add === 'Top' ? addTop() : ''}

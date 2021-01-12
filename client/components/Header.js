@@ -78,7 +78,7 @@ export default function Header({activePage, user}) {
                 <div className={`${styles.userPic} ${user1 ? styles.active : ''}`}
                      onMouseEnter={() => setIsShown(true)}
                      onMouseLeave={() => setIsShown(false)}>
-                    <Link href="/roadmaps"><img src="/profilePic.svg" alt="profile picture"
+                    <Link href="/my-roadmaps"><img src="/profilePic.svg" alt="profile picture"
                                                 className={`${styles.profilePic} ${isScrolled ? styles.active : ''}`}/></Link>
                 </div>
             </div>
